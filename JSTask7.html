@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>JSTask-7</title>
+    <script>
+        var flag = 0;
+        function stopTrain() {
+            flag = 1;
+        }
+        function disp() {
+            var step = 1;
+            var x = document.getElementById('i1').offsetLeft;
+
+            if (flag == 0 && x < 1000) {
+                x = x + step;
+                document.getElementById('i1').style.left = x + "px";
+            }
+
+        }
+        function timer() {
+            disp();
+            my_time = setTimeout('timer()', 20);
+        }
+        function startTrain() {
+            flag = 0;
+            timer();
+        }
+    </script>
+    <style>
+        #Heading {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="train.png" id='i1' style="position:relative; left: 100; top: 0;">
+    <br><br><br><br>
+    <center>
+        <h1 id="Heading">click the following buttons to handle animation</h1>
+        <input type=button onClick=startTrain() value='Start'>
+        <input type=button onClick=stopTrain() value='Stop'>
+    </center>
+
+
+</body>
+
+</html>

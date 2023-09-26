@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>JSTask-3</title>
+    <style type="text/css">
+        body {
+            margin: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <input type="button" onclick="showDate()" value="show date" />
+        <br/>
+        <span id="result1"></span>
+        <br/>
+        <br/>
+        <input type="button" onclick="showTime()" value="show Time" />
+        <br/>
+        <span id="result2"></span>
+        <br/>
+        <br/>
+    </form>
+    <script>
+        function showDate() {
+            let date = new Date().toUTCString().slice(5, 16);
+            document.getElementById("result1").innerHTML = date;
+        }
+        function showTime() {
+            let date = new Date();
+            document.getElementById("result2").innerHTML = date;
+        }
+    </script>
+</body>
+
+</html>
